@@ -20,7 +20,7 @@ router.post('/likes', auth, async(req, res) => {
     await article.findOneAndUpdate({ id: req.body.target_id }, { like: likenum })
     res.status(201).json('点赞成功')
 })
-router('/likes/:user_id', auth, async(req, res) => {
+router.get('/likes/:user_id', auth, async(req, res) => {
     const likes = await like.find({ user_id: req.params.user_id })
     res.status(200).json(likes)
 })
