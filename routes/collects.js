@@ -20,9 +20,9 @@ router.post('/collects', auth, async(req, res) => {
     await article.findOneAndUpdate({ id: req.body.target_id }, { collect: collectnum })
     return res.status(201).json('收藏成功')
 })
-router.get('/collects/:user_id'), auth, async(req, res) => {
+router.get('/collects/:user_id', auth, async(req, res) => {
     const user_id = req.params.user_id
     const collects = await collect.find({ user_id: user_id })
     res.status(200).json(collects)
-}
+})
 module.exports = router
