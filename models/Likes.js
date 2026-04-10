@@ -5,4 +5,5 @@ const likeSchema = new mongoose.Schema({
     target_id: String,
     user_id: String
 })
+likeSchema.index({ like_target: 1, target_id: 1, user_id: 1 }, { unique: true })
 module.exports = mongoose.model('like', likeSchema)

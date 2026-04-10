@@ -7,5 +7,7 @@ const articleSchema = new mongoose.Schema({
     category: String,
     like: { type: Number, default: 0 },
     collect: { type: Number, default: 0 },
+    nickname: String,
+    cover: String
 })
 module.exports = mongoose.model('Article', articleSchema)
