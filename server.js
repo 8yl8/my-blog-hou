@@ -19,7 +19,7 @@ app.use('/collects', collectRouter)
 app.use('/users', userRouter)
 app.use('/uploads', express.static('uploads'))
     //连接数据库
-const mongoURL = process.env.MONGO_URL || 'mongodb://localhost:27017/myblog'
+const mongoURL = process.env.MONGODB_URL || 'mongodb://localhost:27017/myblog'
 mongoose.connect(mongoURL)
     .then(() => console.log('MongDb连接成功')).catch((err) => console.error('MongDb连接失败', err))
 app.listen(PORT, () => {
